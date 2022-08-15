@@ -1,0 +1,691 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Poppins:ital,wght@0,300;0,400;1,200;1,500;1,600&display=swap');
+
+/* general stying */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Inter', sans-serif;
+    letter-spacing:1px;
+}
+    /* for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+    /* for open a gallery */
+.open{
+    display:block;
+}
+    /* for opening nav-bar */
+.navbar.open-nav{
+    transform:translateX(-200px);
+}
+    /* to active a nav list */
+.active::before{
+    content:'';
+    position:absolute;
+    left:0%;
+    bottom:-5px;
+    width:90%;
+    height:5px;
+    background-color:rgba(254, 242, 0, 1);
+    transition:all .3s ease;
+}
+
+    /* styling the sections title */
+.title{
+    margin-bottom:30px;
+    font-size:2rem;
+    position:relative;
+    display: inline-block;
+    z-index:1;
+
+}
+.title::before{
+    content:'';
+    position:absolute;
+    width:90%;
+    height:15px;
+    left:0%;
+    bottom:0%;
+    background:rgba(254, 242, 0, 1);
+    z-index:-1;
+}
+    /* styling the lists */
+li{
+    list-style-type: none;
+}
+li:hover .nav-item::after{
+    width:90%;
+}
+    /* styling navs */
+.nav{
+    display:flex;
+    width:100%;
+    height:100%;
+    justify-content: space-evenly;
+    align-items:center;
+}
+
+/* End of general styling */
+
+/* hero section */
+#hero{
+    width:100%;height:100vh;
+    overflow:hidden;
+}
+
+    /* grid system for the container */
+#hero .container{
+    width:100%;height:100vh;
+    position: relative;
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(11,1fr);
+    grid-template-areas: 
+    " mychild1 mychild1 mychild2 mychild2 mychild2 mychild2 mychild2 mychild2"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3"
+    " mychild1 mychild1 mychild3 mychild3 mychild3 mychild3 mychild3 mychild3";
+    gap:0px;
+}
+.child1{grid-area: mychild1;}
+.child2{grid-area: mychild2;}
+.child3{grid-area: mychild3;}
+
+    /* stylinge navbar */
+#hero .container .navbar{
+    background-image: linear-gradient(to left ,rgb(201 201 201),rgb(80 80 80 / 63%));
+    box-shadow: 1px 13px 15px 0px #121212;
+}
+
+.nav-item{
+    text-decoration:none;
+    color:#101010;
+    font-size:25px;
+    position: relative;
+    cursor:pointer;
+}
+.nav-item::after{
+    content:'';
+    position:absolute;
+    left:0%;
+    bottom:-5px;
+    width:0%;
+    height:5px;
+    background-color:rgba(254, 242, 0, 1);
+    transition:all .3s ease;
+}
+    /* styling hero image */
+#hero .container .heroImg{
+    z-index:-1;
+}
+#hero .container .heroImg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+    /* styling hero title */
+#hero .container .hero-title{
+    position:absolute;
+    left:25%;
+    top:60%;
+    transform: translateY(-60%);
+}
+#hero .container .hero-title h4{
+    font-size:1.5rem;
+    color:white
+}
+#hero .container .hero-title h1{
+    font-size: 4rem;
+    color:white;
+}
+#hero .container .hero-title span{
+    display:inline-block;
+    text-align:center;
+    line-height:50px;
+    margin-top:10px;
+    background:rgba(254, 242, 0, 1);
+}
+#hero .container .hero-title span p{
+    font-size:25px;
+    padding:0 50px
+}
+    /* styling hero side bar */
+#hero .container .sidebar{
+    background:rgba(23, 23, 23, 1);
+    position:relative;
+    transition:ease .5s transform;
+}
+#hero .container .sidebar .burger{
+    display:none;
+    cursor:pointer;
+}
+#hero .container .sidebar h2{
+    position:absolute;
+    left:50%;
+    top:20px;
+    transform: translateX(-50%);
+    color:#fff;
+    letter-spacing:1px;
+    font-size: 30px;;
+}
+#hero .container .sidebar img{
+    position:absolute;
+    left:10%;
+    bottom:40%;
+    width:50%;
+    height:250px;
+    z-index:0;
+}
+/* End of Hero section */
+/* About section */
+    /* styling the about section */
+#about{
+    width:100%;
+    background:rgba(236, 236, 236, 1);    
+}
+.about{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+    /* styling about image and about text */
+#about .about .container{
+    width: 50%;
+    height:100%;
+    margin:auto;
+    display:flex;
+    padding: 50px 0;
+}
+#about .about .about-img{
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+#about .about .about-img img{
+    min-width:300px;
+    max-width:300px;
+    z-index:1;
+}
+#about .about .about-img,
+#about .about .about-text{
+    height:100%;
+    flex:0 0 50%;
+    max-width:50%;
+}
+#about .about .title{
+    margin-bottom:0;
+}
+#about .about .about-text{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+#about .about .about-text p{
+    margin-top:30px;
+    line-height:25px;
+    text-align:center;
+    width:100%;
+    z-index:1;
+}
+
+[src="images/shapes/wavytriangleshape.svg"],[src="images/shapes/squareshape.svg"]{
+    opacity:.6;
+    z-index:0;
+    position:absolute;
+}
+[src="images/shapes/wavytriangleshape.svg"]{
+    width:300px;
+    right: 3%;
+    top: 8%;
+}
+[src="images/shapes/squareshape.svg"]{
+    width: 250px;
+    left: 19%;
+    bottom: 0%;
+}
+/* End of About section */
+
+
+
+/* Portfolio Section */
+    /* styling the porfolio section containers */
+#portfolio{
+    width:100%;
+    background:#fff;
+}
+.portfolio{
+    width:80%;
+    margin:auto;
+    text-align:center;
+}
+    /* styling the porfolio header */
+
+#portfolio .portfolio .portfolio-text{
+    width:60%;
+    margin:auto;
+    padding:30px 0;
+    text-align: center;
+}
+#portfolio .portfolio .portfolio-text .nav{
+    justify-content:space-between;
+}
+    /* styling the gallery cell */
+#portfolio .portfolio .gallery .cell{
+    border:1px solid #ffffff;
+    position:relative;
+    overflow: hidden;
+}
+         /* gallery grid system */
+#portfolio .portfolio .gallery .cell img,
+#portfolio .portfolio .gallery .cell iframe{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+#portfolio .portfolio .gallery .cell img{
+    transition:.5s ease transform;
+    cursor:pointer;
+}
+#portfolio .portfolio .gallery-img .cell img:hover,
+#portfolio .portfolio .gallery-logos    .cell img:hover{
+    transform:scale(1.2);
+}
+#portfolio .portfolio .gallery{
+    display:grid;
+    grid-template-columns: repeat(4,33.33%);
+    grid-template-rows: repeat(4,300px);
+    grid-template-areas: 
+    "cell1 cell1 cell2 cell3"
+    "cell1 cell1 cell4 cell5"
+    "cell6 cell7 cell10 cell10"
+    "cell8 cell9 cell10 cell10";
+    justify-content:center;
+    width:80%;
+    margin-top: 30px;
+    margin:auto;
+    transition:all ease 1s;
+
+}
+#portfolio .portfolio .gallery .gal1{
+    grid-area: cell1;
+}
+#portfolio .portfolio .gallery .gal2{
+    grid-area: cell2;
+}
+#portfolio .portfolio .gallery .gal3{
+    grid-area: cell3;
+}
+#portfolio .portfolio .gallery .gal4{
+    grid-area: cell4;
+}
+#portfolio .portfolio .gallery .gal5{
+    grid-area: cell5;
+}
+#portfolio .portfolio .gallery .gal6{
+    grid-area: cell6;
+}
+#portfolio .portfolio .gallery .gal7{
+    grid-area: cell7;
+}
+#portfolio .portfolio .gallery .gal8{
+    grid-area: cell8;
+}
+#portfolio .portfolio .gallery .gal9{
+    grid-area: cell9;
+}
+#portfolio .portfolio .gallery .gal10{
+    grid-area: cell10;
+}
+    /* display Galleries */
+#portfolio .portfolio .gallery{
+    display:none;
+}
+#portfolio .portfolio .gallery-img{
+    display:grid;
+}
+    /* Collection-galery-type Div */
+#portfolio .portfolio .gallery-collection .cell .collection-type{
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    align-items:center;
+    background: rgba( 0, 0, 0, 0.25 );
+    box-shadow: rgb(31 38 135, 0.37 ) ;
+    backdrop-filter: blur(4px);
+    transition:ease all .5s;
+}
+#portfolio .portfolio .gallery-collection .cell .collection-type p{
+    width:70%;
+    color:white;
+    font-size:18px;
+    line-height:20px;
+}
+#portfolio .portfolio .gallery-collection .cell .collection-type .go-collection{
+    width:150px;height:50px;
+    background:transparent;
+    border:2px solid white;
+    color:white;
+    transition:.3s ease all;
+    font-size:18px;
+    cursor:pointer;
+}
+#portfolio .portfolio .gallery-collection .cell .collection-type .go-collection:hover{
+    background:#fff;
+    border:2px solid transparent;
+    color:#000;
+}
+    /* show info when hover a collection-gallery cell. */
+#portfolio .portfolio .gallery-collection .cell .collection-type p,
+#portfolio .portfolio .gallery-collection .cell .collection-type .go-collection{
+    display:none;
+}
+
+#portfolio .portfolio .gallery-collection .cell .collection-type h4{
+    font-size:20px;
+    color:white;
+}
+#portfolio .portfolio .gallery-collection .cell:hover .collection-type{
+    height:100%;
+}
+#portfolio .portfolio .gallery-collection .cell :hover > p,
+#portfolio .portfolio .gallery-collection .cell :hover > .go-collection{
+    display:block; 
+}
+#portfolio .portfolio .gallery-collection .cell :hover> h4{
+    text-decoration:underline;
+}
+    /* styling the view more button */
+#portfolio .portfolio .view-more{
+    padding:15px 50px;
+    margin:30px 0;
+    background-color:#101010;
+    color:white;
+    border-radius:30px;
+    border:2px solid transparent;
+    font-size:16px;
+    cursor:pointer;
+    transition:ease background-color .3s;
+}
+#portfolio .portfolio .view-more:hover{
+    border:2px solid #101010;
+    background:transparent;
+    color:black;
+}
+    /* styling the pop up div */
+#portfolio .portfolio .pop-up{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index:100;
+    display:none;
+}
+#portfolio .portfolio .pop-up img{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    height:100%;
+    object-fit: contain;
+    padding:20px;
+}
+#portfolio .portfolio .pop-up span{
+    position:absolute;
+    right:20px;
+    top:0;
+    font-size:50px;
+    color:white;
+    font-weight: 300;
+    cursor:pointer;
+    z-index:101;
+}
+/* End of Portfolio Section */
+
+/* Footer Section */
+    /* styling the footer section */
+#footer{
+    width:100%;height:500px;
+    background:#101010;
+    text-align:center;
+    position:relative;
+}
+.footer{
+    width:70%;height:100%;
+    margin:auto;
+}
+    /* styling the footer title and p */
+#footer .footer .title{
+    color:#fff;
+    margin-top: 60px;
+}
+#footer .footer p{
+    color:#fff;
+    margin-bottom:60px;
+    margin-top:20px;
+    letter-spacing:3px;
+}
+    /* styling the social media div */
+#footer .footer .socials{
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    width:60%;
+    margin:auto;
+}
+#footer .footer .socials .social{
+    width:70px;height:70px;
+    background:rgba(254, 242, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    border:2px solid transparent;
+    transition:ease all .3s;
+    cursor:pointer;
+}
+#footer .footer .socials .social i{
+    font-size:25px;
+    transition:ease all .3s;
+}
+#footer .footer .socials .social:hover{
+    border:2px solid rgba(254, 242, 0, 1);
+    background:transparent;
+}
+#footer .footer .socials .social:hover i{
+    color:rgba(254, 242, 0, 1);
+}
+    /* styling the copywrite div */
+#footer .copywrite{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:40px;
+    background:rgba(123, 123, 123, 1);
+    line-height:40px;
+    color:rgba(209, 209, 209, 1);
+}
+#footer .copywrite p{
+    letter-spacing:1px;
+    margin:0;
+}
+/* End of Footer Section */
+    
+/* tablet media query */
+@media screen and (max-width:1250px){
+    /* styling the portfolio section of tablet */
+    #portfolio .portfolio{
+        width:100%;
+    }
+    #about .about .about-img{
+        display:none;
+    }
+    #about .about .container{
+        text-align:center;
+    }
+    #about .about .about-text{
+        max-width:100%;
+        flex:0 0 100%;
+    }
+    /* styling the portfolio section of tablet */
+    #portfolio .portfolio .portfolio-text{
+        width:80%;
+        justify-content: space-evenly;
+    }
+    /* styling the gallery grid */
+    #portfolio .portfolio .gallery{
+        grid-template-columns: repeat(3,33.33%);
+        grid-template-rows: repeat(3,300px);
+                grid-template-areas:
+            "cell1 cell1 cell2"
+            "cell1 cell1 cell3"
+            "cell4 cell4 cell5";
+        justify-content: space-between;
+        width:90%;
+    }
+    #portfolio .portfolio .gallery-collection .cell .collection-type p{
+        display:none;
+    }
+    #portfolio .portfolio .gallery-collection .cell .collection-type{
+        height:100%;
+    }
+    /* styling the footer section for tablet */
+    #footer{
+        height:400px;
+    }
+    #footer .footer{
+        width:100%;
+    }
+    #footer .footer .socials{
+        width:80%;
+        justify-content: space-between;
+    }
+
+
+}
+/* mobile media query */
+@media screen and (max-width:600px){
+    /* styling the hero section for mobile  */
+    #hero .container{
+        display:block;
+        position:relative;
+    }
+    #hero .container .heroImg{
+        width:100%;
+        height:100%;
+        position: absolute;
+        left: 0;
+        top: 0;    
+    }
+    #hero .container .sidebar{
+        left: 0;
+        top: 0;    
+        width:100%;
+        height:60px;
+    }
+    #hero .container .sidebar h2{
+        top:50%;
+        transform: translate(-50%,-50%);
+     }
+
+    #hero .container .sidebar .burger{
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 90%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        display: block;
+    }
+     #hero .container .navbar{
+         width: 200px;
+         height: calc(100vh - 70px);
+         background: #121212;
+         box-shadow: none;
+         position: absolute;
+         left: 100%;
+         z-index: 101;
+         transition: .3s ease transform;
+     }
+     #hero .container .navbar .nav{
+         flex-direction:column;
+         justify-content: space-around;
+         color:white;
+     }
+     #hero .container .navbar .nav .nav-item{
+         color:white;
+     }
+     #hero .container .hero-title{
+        left:10%;
+     }
+     #hero .container .hero-title h1{
+        font-size: 3rem;
+     }
+        /* styling the about section for mobile */
+    #about .about .container{
+        width:90%;
+    }
+        /* styling the portfolio section for mobile */
+    #portfolio .portfolio{
+        width:100%;
+    }
+    #portfolio .portfolio .portfolio-text{
+        width:100%;
+    }
+    #portfolio .portfolio .portfolio-text .nav{
+        justify-content: space-evenly;
+    }
+    #portfolio .portfolio .portfolio-text .portfolio-nav .nav-item{
+        font-size: 16px;
+    }
+            /* styling the gallery veiw for mobile */
+    #portfolio .portfolio .gallery {
+        grid-template-columns: repeat(5,50%);
+        grid-template-rows: repeat(2,200px);
+        grid-template-areas:
+            "cell1 cell2"
+            "cell1 cell3"
+            "cell4 cell4"
+            "cell5 cell6"
+            "cell5 cell6";
+        overflow: hidden;
+        width:100%;
+    }
+    #portfolio .portfolio .gallery-collection .cell .collection-type p{
+        display:none;
+    }
+    #portfolio .portfolio .gallery-collection .cell .collection-type{
+        height:100%;
+    }
+    /* styling the footer section of mobile. */
+    #footer{
+        height:400px;
+    }
+    #footer .footer{
+        width:100%;
+    }
+    #footer .footer .socials{
+        width:80%;
+        justify-content: space-between;
+    }
+    #footer .footer .socials .social{
+        width:50px; height:50px;
+    }
+}
