@@ -185,6 +185,17 @@ li:hover .nav-item::after{
     height:250px;
     z-index:0;
 }
+#hero .container .sidebar #s-lang{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    background: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    color: #d3d3d3;
+}
 /* End of Hero section */
 /* About section */
     /* styling the about section */
@@ -614,6 +625,13 @@ li:hover .nav-item::after{
         transform: translate(-50%,-50%);
         display: block;
     }
+    #hero .container .sidebar #s-lang{
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
      #hero .container .navbar{
          width: 200px;
          height: calc(100vh - 70px);
