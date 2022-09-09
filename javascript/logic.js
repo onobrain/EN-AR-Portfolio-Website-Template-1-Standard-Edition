@@ -60,6 +60,14 @@ document.querySelector("#hero .container .sidebar .burger").addEventListener("cl
         document.querySelector("#hero .container .navbar").classList.remove("open-nav")
     })
 })
+// preload
+const preloader =  document.querySelector('.preload_container');
+window.addEventListener('load',vanish)
+
+function vanish(){
+    preloader.classList.add('disappear');
+}
+
 // Change language.
 const lang = document.getElementById("s-lang");
 let styles  = document.querySelectorAll(".style");

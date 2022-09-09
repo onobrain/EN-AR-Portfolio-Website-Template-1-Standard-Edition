@@ -31,6 +31,51 @@ html {
     background-color:rgba(254, 242, 0, 1);
     transition:all .3s ease;
 }
+/* Preloader */
+.preload_container{
+    width:100%;height:100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    background: rgb(201 201 201);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+.preload_container h1{
+    transform:translateY(-50px);
+    color: #121212;
+    font-size:3rem;
+}
+.preload_container .outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(254, 242, 0, 1);
+    -webkit-animation:spin_left 4s linear infinite;
+    -moz-animation:spin_left 4s linear infinite;
+    animation:spin_left 4s linear infinite;
+    border-radius: 50%;
+    border-right-color: rgb(201 201 201);
+
+}
+.preload_container .inner{
+    width: 30px;
+    height:30px;
+    border: 5px solid rgba(254, 242, 0, 1);
+    -webkit-animation:spin_right 4s linear infinite;
+    -moz-animation:spin_right 4s linear infinite;
+    animation:spin_right 4s linear infinite;
+    border-radius: 50%;
+    border-right-color: rgb(201 201 201);
+}
+.disappear{
+    animation: disappear 1s forwards;
+}
 
     /* styling the sections title */
 .title{
@@ -707,3 +752,16 @@ li:hover .nav-item::after{
         width:50px; height:50px;
     }
 }
+
+/* keyframes */
+@-moz-keyframes spin_left { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin_left { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin_left { 100% {transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin_right { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin_right { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin_right { 100% {transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes disappear {100%{opacity: 0;visibility: hidden;}}
+@-webkit-keyframes disappear {100%{opacity: 0;visibility: hidden;}}
+@keyframes disappear {100%{opacity: 0;visibility: hidden;}}
